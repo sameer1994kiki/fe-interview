@@ -1,3 +1,5 @@
+// EventEmitter就是发布订阅模式
+
 class EventEmitter {
   constructor() {
     this.cache = {};
@@ -23,7 +25,7 @@ class EventEmitter {
 
   emit(name) {
     if (this.cache[name]) {
-      // 创建副本，如果回调函数内继续注册相同事件，会造成死循环
+      // 创建副本，如果回调函数内继续注册相同事件，会造成死循环,slice是为了复制一个新数组
       const tasks = this.cache[name].slice();
       for (let fn of tasks) {
         fn();
@@ -131,3 +133,4 @@ EventEmitter.prototype.removeAllListeners = function (type) {
   if (!hanlder) return;
   this.events.delete(type);
 };
+//发布订阅模式和观察者模式 https://mp.weixin.qq.com/s/QbJTN2gBMW-qb_hj2TQI1g

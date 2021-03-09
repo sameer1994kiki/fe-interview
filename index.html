@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+      test
+        <script type="text/javascript">
+
+        const arr = [1,[2,[3,4,[7,6,[9]]]]];
+        function test(ar){
+          const result = [];
+          for(let i= 0;i<ar.length;i++){
+            if(Array.isArray(ar[i])){
+              result.push(...test(ar[i]));
+            }else{
+              result.push(ar[i])
+            }
+          }
+          return result;
+        }
+        
+        console.log(test(arr));
+
+        Number,String,BigInt,Symbol,Boolean,undefined,null,NaN
+
+
+//         Function.prototype.mybind = function (context) {
+//           debugger
+//   if (typeof this !== "function") {
+//     throw new TypeError("Error");
+//   }
+//   let fn = this;
+//   let arg = [...arguments].slice(1);
+//   return function F() {
+//     // 处理函数使用new的情况
+//     if (this instanceof F) {
+//       debugger
+//       return new fn(...arg, ...arguments);
+//     } else {
+//       const a = arg.concat(...arguments)
+//       debugger
+//       return fn.apply(context, a);
+//     }
+//   };
+// };
+
+// function test() {
+//   debugger
+//   console.log('test', arguments, this)
+//  }
+//  const obj = {
+//    a: 1
+// }
+//  const b = test.mybind(this,1, 2, 3);
+//  new b();
+
+
+        </script>
+    </body>
+</html>

@@ -1,3 +1,12 @@
+// use this
+function New(fn, ...args) {
+  const obj = Object.create(fn.prototype);
+  const result = fn.apply(obj, args);
+  if (result && (typeof result === "object" || typeof result === "function"))
+    return result;
+  return obj;
+}
+
 // 第二版
 function create() {
   // 创建一个空的对象
@@ -35,7 +44,8 @@ let obj = myNew(person)("chen", 18); // {name: "chen", age: 18}
 // 如何访问对象中的的原型
 // 如何判断属性是对象实例中的属性还是原型中的属性
 // JavaScript常用八种继承方案
-
+// https://mp.weixin.qq.com/s/XfjElSdKNFfIzW0ov6Wn6g  Object.create和new的区别
 // https://mp.weixin.qq.com/s/er5ALxcSk-5oCYjO8x1JXw
 // https://mp.weixin.qq.com/s/pYUd90c2_1pqx9RFuQ73tQ
 // https://mp.weixin.qq.com/s/GQA1TwVN3cTKaJL4nC20tQ
+// https://juejin.cn/post/6921985542879969294
