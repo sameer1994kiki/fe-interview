@@ -33,3 +33,6 @@ function deepClone(obj, hash = new WeakMap()) {
   return cloneObj;
 }
 // 上面代码使用了 WeakMap 数据结构来解决循环引用的问题
+// https://mp.weixin.qq.com/s/PQ9KH60s7xajNsjemXiNuQ
+// https://mp.weixin.qq.com/s/fyqkKKbwIJi6tmIfJMGxKg
+// https://juejin.cn/post/6844903937426849799

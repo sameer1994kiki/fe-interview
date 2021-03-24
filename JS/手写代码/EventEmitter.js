@@ -134,3 +134,4 @@ EventEmitter.prototype.removeAllListeners = function (type) {
   this.events.delete(type);
 };
 //发布订阅模式和观察者模式 https://mp.weixin.qq.com/s/QbJTN2gBMW-qb_hj2TQI1g
+// https://juejin.cn/post/6844903850105634824

@@ -1,0 +1,3 @@
+1. 页面性能优化 可以聊的东西其实挺多的，比如通常会从网络、加载这两个角度出发来解决性能问题。网络角度上有可以聊到前面提到的缓存、CDN、HTTP2以及图片格式上面的优化。从加载上来说的话，又可以聊到 webpack 的打包拆包、tree-shaking、懒加载和异步加载、多线程。除了这两个角度以外，还可以从用户体验的角度上来进行优化，比如说骨架屏、动画、虚拟滚动等。除了这种常规的角度来说，现在我们开发一个 Web 应用通常都会使用框架，每一款框架一般都会有一些配套的性能优化的手段，比如 React 里面的 shouldComponentUpdate、PureComponent、memo 等优化 diff 算法的手段也需要回答。框架的优化问题通常会在你答完性能优化的问题之后跟着问你，具体可以看下这两篇：性能优化[6]https://github.com/i-want-offer/FE-Interview-questions/blob/master/性能优化/性能优化.md，React 性能优化[7]https://github.com/i-want-offer/FE-Interview-questions/blob/master/性能优化/React性能优化.md。至于 webpack，以我目前的面试经历，问的相对比较少，可以有选择的去关心关注。
+2. requestAnimation
+3. 

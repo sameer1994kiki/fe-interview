@@ -1,0 +1,2 @@
+1. http和https tcp，http和tcp、https、http2(队头阻塞？解决了哪些问题？哪有哪些问题未解决？tcp和udp？)。摘要算法和对称加密、非对称加密大概说一下？摘要和加密的区别？知道哪些加密算法？websocket的使用场景（socket.io降级）？Html4，html5是建立在http上的，http的下一代要解决什么问题？
+2. 缓存相关（对比缓存？强缓存？对应请求头，协商缓存）cookie有哪些属性？

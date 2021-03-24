@@ -191,3 +191,5 @@ MyPromise.reject = function (err) {
     reject(err);
   });
 };
+
+// https://juejin.cn/post/6844904112346103816

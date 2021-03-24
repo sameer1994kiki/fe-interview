@@ -1,7 +1,7 @@
 // https://mp.weixin.qq.com/s/6u3K0qa2oSWtGBS-krhYcA
 // https://segmentfault.com/a/1190000021744567
 // https://vue-js.com/topic/603708244590fe0031e59689
-
+// https://mp.weixin.qq.com/s/6u3K0qa2oSWtGBS-krhYcA
 // ### 实现简易 MVVM
 
 // typescript

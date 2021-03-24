@@ -1,3 +1,4 @@
+// MDN实现
 Array.prototype.map = function (callbackfn, thisArg) {
   // 异常处理
   if (this == null) {
@@ -115,6 +116,65 @@ Array.prototype.reduce = function (callbackfn, initialValue) {
   }
   return accumulator;
 };
+
+Object.defineProperty(Array.prototype, "reduce", {
+  value: function (callback /*, initialValue*/) {
+    if (this === null) {
+      throw new TypeError(
+        "Array.prototype.reduce " + "called on null or undefined"
+      );
+    }
+    if (typeof callback !== "function") {
+      throw new TypeError(callback + " is not a function");
+    }
+
+    // 1. Let O be ? ToObject(this value).
+    var o = Object(this);
+
+    // 2. Let len be ? ToLength(? Get(O, "length")).
+    var len = o.length >>> 0;
+
+    // Steps 3, 4, 5, 6, 7
+    var k = 0;
+    var value;
+
+    if (arguments.length >= 2) {
+      value = arguments[1];
+    } else {
+      while (k < len && !(k in o)) {
+        k++;
+      }
+
+      // 3. If len is 0 and initialValue is not present,
+      //    throw a TypeError exception.
+      if (k >= len) {
+        throw new TypeError("Reduce of empty array " + "with no initial value");
+      }
+      value = o[k++];
+    }
+
+    // 8. Repeat, while k < len
+    while (k < len) {
+      // a. Let Pk be ! ToString(k).
+      // b. Let kPresent be ? HasProperty(O, Pk).
+      // c. If kPresent is true, then
+      //    i.  Let kValue be ? Get(O, Pk).
+      //    ii. Let accumulator be ? Call(
+      //          callbackfn, undefined,
+      //          « accumulator, kValue, k, O »).
+      if (k in o) {
+        value = callback(value, o[k], k, o);
+      }
+
+      // d. Increase k by 1.
+      k++;
+    }
+
+    // 9. Return accumulator.
+    return value;
+  },
+});
+
 // 另一种实现
 function reduce(arr, callback, initial) {
   let i = 0;
@@ -139,3 +199,6 @@ arr.myMap(function (item, index, arr) {
   console.log(item, index, arr);
 });
 // https://mp.weixin.qq.com/s/mEKniIzg34JNgBaq5BN16g
+
+// 扩展：func.call(null, param) 与 func(param)
+// https://www.imooc.com/wenda/detail/420803
