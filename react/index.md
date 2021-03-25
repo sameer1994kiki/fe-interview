@@ -17,8 +17,8 @@
 17. 实现一个自定义hook - usePrevious
 18. React新的生命周期，为什么 getDrivedStatefromProps是静态的
 19. 实现一个 redux，实现 createStore 的功能，关键点发布订阅的功能，以及取消订阅的功能
+20. redux-thunk和redux-saga
+21. setState和forceUpdate
 
 
 
-
-React 灵魂 23 问，你能答对几个？https://zhuanlan.zhihu.com/p/304213203

@@ -25,6 +25,7 @@
 25. 重绘重排
 26. 浏览器性能监控
 27. 针对 basic 组件，建议使用类似 Storybook 的工具进行组件管理
+28. web worker
 
 <!-- https://mp.weixin.qq.com/s/TQHy1wvYNiWY9Yyqgv7Q5A（如何算是熟练掌握了一门技术） -->
 

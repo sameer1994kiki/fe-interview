@@ -55,3 +55,4 @@ function compose(...funcs) {
 // https://mp.weixin.qq.com/s/ED-zyj51PC9HR6kx8SZGBA
 // https://juejin.cn/post/6844903988647690254
 // https://mp.weixin.qq.com/s/7iSW9TwSE0F_huinWG2HZw
+// 异步的compose;   important！！！
