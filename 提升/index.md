@@ -1,7 +1,7 @@
 1. commonjs和esmodule异同
 2. 怎么看待virtual dom？
 3. ast语法树了解吗？，实现一个AST（https://mp.weixin.qq.com/s/-CC2a31NgrsUZCYrfTI-Dg）
-4. 对MVC （react） MVVM（vue）的了解
+4. 对MVC （react） MVVM（vue）的了解  异同（https://mp.weixin.qq.com/s/15HcPt1U48v6DhLAL3SZIg）
 5. 设计模式（观察者模式（高频），单例模式常用）https://mp.weixin.qq.com/s/5xAoh_vTYIbmhcg-VYt-Kw
 6. 微前端看法
 7. 乾坤框架的了解和看法
@@ -21,11 +21,14 @@
 21. type 和 interface 的区别 TS
 22. 函数式组件与类组件有何不同？: https://overreacted.io/zh-hans/how-are-function-components-different-from-classes/
 23. websocket
-24. PWA
+24. PWA（Progressive web apps,渐进式 Web 应用）
 25. 重绘重排
 26. 浏览器性能监控
 27. 针对 basic 组件，建议使用类似 Storybook 的工具进行组件管理
 28. web worker
+29. 实现compose异步
+30. WebComponents
+31. JavaScript混淆安全加固 https://juejin.cn/post/6844903861958737927#heading-23
 
 <!-- https://mp.weixin.qq.com/s/TQHy1wvYNiWY9Yyqgv7Q5A（如何算是熟练掌握了一门技术） -->
 

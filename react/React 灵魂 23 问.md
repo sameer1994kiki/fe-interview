@@ -33,6 +33,8 @@
 3. useEffect(fn, []) 和 componentDidMount 有什么差异？useLayoutEffect呢
    * useEffect 会捕获 props 和 state。所以即便在回调函数里，你拿到的还是初始的 props 和 state。如果想得到“最新”的值，可以使用 ref。
    * 场景：useEffect中使用定时器
+   * 尽可能使用标准的 useEffect 以避免阻塞视图更新，useLayoutEffect等同于componentDidMount，会阻塞视图更新
+   * **useEffect(fn, [])和useEffect(fn)的区别在于是否会每次更新的时候都要运行 Effect，useEffect(fn, [])不会**
 4. hooks 为什么不能放在条件判断里
    * 以 useState 为例，在 react 内部，每个组件(Fiber)的 hooks 都是以链表的形式存在 memoizeState 属性中
    * update 阶段，每次调用 useState，链表就会执行 next 向后移动一步。如果将 useState 写在条件判断中，假设条件判断不成立，没有执行里面的 useState 方法，会导致接下来所有的 useState 的取值出现偏移，从而导致异常发生。
@@ -84,6 +86,7 @@
 16. HTML 和 React 事件处理有什么区别?
     * 在 HTML 中事件名必须小写，而在 React 中需要遵循驼峰写法。
     * 在 HTML 中可以返回 false 以阻止默认的行为，在 React 中必须地明确地调用 preventDefault()
+    * 通过 JSX , 你传递一个函数作为事件处理程序，而不是一个字符串
 17. 什么是 suspense 组件?
     * Suspense 让组件“等待”某个异步操作，直到该异步操作结束即可渲染。
     * Suspense 也可以用于懒加载
@@ -106,6 +109,7 @@
     * redux-thunk
     * redux-saga
     * redux-observable
+
 
 
 
