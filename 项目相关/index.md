@@ -9,3 +9,13 @@
     + 遇到这些问题，你都是如何进行解决的；
     + 项目完成之后，取得了哪些成果；
 4. 讲概念，说用途，理思路，优缺点，来一遍”，还需要对你长期开发过程中的思考，有经验层面的方法总结
+5. 打造一个 lucas-scripts
+6. 
+7.  埋点组件构建（https://mp.weixin.qq.com/s/qPscY8VBawl74GmqS57SVg）
+8. 更换主题色
+9. OSS项目重构，推行eslint和primitter
+10. css原子化
+11. 复用相同的逻辑
+12. dockerfile,jekins（https://mp.weixin.qq.com/s/ZkKcbGEqTQg4QEbzWqNjCg）
+13. api缓存 https://mp.weixin.qq.com/s/tXMncif8P7MfjjIh91U_Eg，https://mp.weixin.qq.com/s/cys1vesfhKXRu-kVqppmfg
+14. 中文连续输入问题
