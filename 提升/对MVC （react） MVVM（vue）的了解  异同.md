@@ -96,3 +96,19 @@ MVVM让用户界面和逻辑分离更加清晰。下面是MVVM的示意图，可
 <!-- https://juejin.cn/post/6844903565543079943 good -->
 <!-- https://juejin.cn/post/6844903825225023502 best -->
 <!-- https://juejin.cn/post/6844903586103558158 best-->
+
+
+
+请简单实现双向数据绑定mvvm
+<input id="input"/>
+const data = {};
+const input = document.getElementById('input');
+Object.defineProperty(data, 'text', {
+  set(value) {
+    input.value = value;
+    this.value = value;
+  }
+});
+input.onChange = function(e) {
+  data.text = e.target.value;
+}

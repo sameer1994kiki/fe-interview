@@ -8,3 +8,26 @@
 8. webapck的HMR
 9. DLLPlugin原理，为什么不直接使用压缩版本的js
 10. webpack 是如何实现动态导入的: https://juejin.im/post/5d26e7d1518825290726f67a
+
+
+
+编写一个loader
+
+loader就是一个node模块，它输出了一个函数。当某种资源需要用这个loader转换时，这个函数会被调用。并且，这个函数可以通过提供给它的this上下文访问Loader API。 reverse-txt-loader
+
+// 定义
+module.exports = function(src) {
+  //src是原文件内容（abcde），下面对内容进行处理，这里是反转
+  var result = src.split('').reverse().join('');
+  //返回JavaScript源码，必须是String或者Buffer
+  return `module.exports = '${result}'`;
+}
+//使用
+{
+	test: /\.txt$/,
+	use: [
+		{
+			'./path/reverse-txt-loader'
+		}
+	]
+},
