@@ -10,15 +10,22 @@
     + 项目完成之后，取得了哪些成果；
 4. 讲概念，说用途，理思路，优缺点，来一遍”，还需要对你长期开发过程中的思考，有经验层面的方法总结
 5. 打造一个 lucas-scripts
-6. 
-7.  埋点组件构建（https://mp.weixin.qq.com/s/qPscY8VBawl74GmqS57SVg）
-8. 更换主题色
-9. OSS项目重构，推行eslint和primitter
-10. css原子化
-11. 复用相同的逻辑
-12. dockerfile,jekins（https://mp.weixin.qq.com/s/ZkKcbGEqTQg4QEbzWqNjCg）
-13. api缓存 https://mp.weixin.qq.com/s/tXMncif8P7MfjjIh91U_Eg，https://mp.weixin.qq.com/s/cys1vesfhKXRu-kVqppmfg
-14. 中文连续输入问题
+6.  埋点组件构建（https://mp.weixin.qq.com/s/qPscY8VBawl74GmqS57SVg）
+7. 更换主题色
+8. OSS项目重构，推行eslint和primitter
+9.  css原子化
+10. 复用相同的逻辑
+11. dockerfile,jekins（https://mp.weixin.qq.com/s/ZkKcbGEqTQg4QEbzWqNjCg）
+12. api缓存 https://mp.weixin.qq.com/s/tXMncif8P7MfjjIh91U_Eg，https://mp.weixin.qq.com/s/cys1vesfhKXRu-kVqppmfg
+13. 中文连续输入问题
+
+
+
+动静分离
+静态化
+ssr
+serverless
+node 定位cpu性能瓶颈
 
 
 <!-- https://mp.weixin.qq.com/s/HjTcJh9H62MfAsvqYtfpFw -->
@@ -33,19 +40,19 @@
 前端产生异常的原因主要分5类： 
 原因	案例	频率
 逻辑错误	1)    业务逻辑判断条件错误
-2)    事件绑定顺序错误
-3)    调用栈时序错误
-4)    错误的操作js对象	经常
+1)    事件绑定顺序错误
+2)    调用栈时序错误
+3)    错误的操作js对象	经常
 数据类型错误	1)    将null视作对象读取property
-2)    将undefined视作数组进行遍历
-3)    将字符串形式的数字直接用于加运算
-4)    函数参数未传	经常
+1)    将undefined视作数组进行遍历
+2)    将字符串形式的数字直接用于加运算
+3)    函数参数未传	经常
 语法句法错误		较少
 网络错误	1)    慢
-2)    服务端未返回数据但仍200，前端按正常进行数据遍历
-3)    提交数据时网络中断
-4)    服务端500错误时前端未做任何错误处理	偶尔
+1)    服务端未返回数据但仍200，前端按正常进行数据遍历
+2)    提交数据时网络中断
+3)    服务端500错误时前端未做任何错误处理	偶尔
 系统错误	1)    内存不够用
-2)    磁盘塞满
-3)    壳不支持API
-4)    不兼容
+1)    磁盘塞满
+2)    壳不支持API
+3)    不兼容

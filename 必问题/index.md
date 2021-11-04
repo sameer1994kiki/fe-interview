@@ -13,7 +13,6 @@
 
 
 
-
 10. 闭包
 11. 原型链
 12. 防抖截流
@@ -22,6 +21,11 @@
 
 
 
+
+
+
+异步promise:
+https://mp.weixin.qq.com/s/Dmrm-oC_PEcFOzJ4IpYaiQ
 
 
 
