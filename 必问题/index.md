@@ -257,6 +257,14 @@ If-None-Match（服务器通过比较请求头部的If-None-Match与当前资源
 
 
 ## 说说event loop
+Event Loop是javascript的执行机制
+
+浏览器和Node 环境下，microtask 任务队列的执行时机不同
+
+Node端，microtask 在事件循环的各个阶段之间执行
+浏览器端，microtask 在事件循环的 macrotask 执行完之后执行
+
+
 首先，js是单线程的，主要的任务是处理用户的交互，而用户的交互无非就是响应DOM的增删改，使用事件队列的形式，一次事件循环只处理一个事件响应，使得脚本执行相对连续，所以有了事件队列，用来储存待执行的事件，那么事件队列的事件从哪里被push进来的呢。那就是另外一个线程叫事件触发线程做的事情了，他的作用主要是在定时触发器线程、异步HTTP请求线程满足特定条件下的回调函数push到事件队列中，等待js引擎空闲的时候去执行，当然js引擎执行过程中有优先级之分，首先js引擎在一次事件循环中，会先执行js线程的主任务，然后会去查找是否有微任务microtask（promise），如果有那就优先执行微任务，如果没有，在去查找宏任务macrotask（setTimeout、setInterval）进行执行
 
 众所周知 JS 是门非阻塞单线程语言，因为在最初 JS 就是为了和浏览器交互而诞生的。如果 JS 是门多线程的语言话，我们在多个线程中处理 DOM 就可能会发生问题（一个线程中新加节点，另一个线程中删除节点）
@@ -290,6 +298,23 @@ UI rendering
 然后开始下一轮 Event loop，执行宏任务中的异步代码
 通过上述的 Event loop 顺序可知，如果宏任务中的异步代码有大量的计算并且需要操作 DOM 的话，为了更快的响应界面响应，我们可以把操作 DOM 放入微任务中
 
+
+外部输入数据-->轮询阶段(poll)-->检查阶段(check)-->关闭事件回调阶段(close callback)-->定时器检测阶段(timer)-->I/O事件回调阶段(I/O callbacks)-->闲置阶段(idle, prepare)-->轮询阶段（按照该顺序反复运行）...
+
+timers 阶段：这个阶段执行timer（setTimeout、setInterval）的回调
+I/O callbacks 阶段：处理一些上一轮循环中的少数未执行的 I/O 回调
+idle, prepare 阶段：仅node内部使用
+poll 阶段：获取新的I/O事件, 适当的条件下node将阻塞在这里
+check 阶段：执行 setImmediate() 的回调
+close callbacks 阶段：执行 socket 的 close 事件回调
+
+定时器（timers）：本阶段执行已经被 setTimeout() 和 setInterval() 的调度回调函数。
+待定回调（pending callbacks）：执行延迟到下一个循环迭代的 I/O 回调。
+idle, prepare：仅系统内部使用。
+轮询（poll）：检索新的 I/O 事件；执行与 I/O 相关的回调（几乎所有情况下，除了关闭的回调函数，那些由计时器和 setImmediate() 调度的之外），其余情况 Node 将在适当的时候在此阻塞。
+检测（check）：setImmediate() 回调函数在这里执行。
+关闭的回调函数（close callbacks）：一些关闭的回调函数，如：socket.on('close', ...)。
+注意：上面六个阶段都不包括 process.nextTick()(下文会介绍)
 
 ## 浏览器的渲染过程：
 
